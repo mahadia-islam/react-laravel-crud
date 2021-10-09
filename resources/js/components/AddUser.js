@@ -7,7 +7,6 @@ function AddUser() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -21,10 +20,6 @@ function AddUser() {
 
     const changePassword = (e) => {
         setPassword(e.target.value)
-    }
-
-    const changeConfirmPassword = (e) => {
-        setConfirmPassword(e.target.value)
     }
 
     const formData = {
@@ -62,15 +57,6 @@ function AddUser() {
                 <input onChange={ changePassword } type="password" className="form-control" id="exampleInputPassword1" placeholder="Enter Password" />
             </div>
             <br />
-            <div className="form-group mt-2">
-                <input onChange={ changeConfirmPassword } type="password" className="form-control" id="exampleInputPassword1" placeholder="Confirm Password" />
-            </div>
-            <br/>
-            <div className="form-check mt-2">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                <label className ="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-            </div>
-            <br/>
             <button type="submit" className="btn btn-primary">Submit</button>
             {error ? (<div className="alert alert-danger mt-3">{error}</div>) : null}
             {success ? (<div className="alert alert-primary mt-3">{ success }</div>) : null}
